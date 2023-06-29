@@ -1,9 +1,12 @@
-<div class="container">
-    <h1> Bienvenido a Catando ando Coffee Shop </h1>
-    <p> Aquí podrás encontrar los mejores productos de café de la región. </p>
-    <p> Si deseas conocer más sobre nosotros, puedes visitar la sección <a href="http://localhost/catando2/?clase=UserController&metodo=index">Nosotros</a>. </p>
-    <p> Si deseas conocer nuestros productos, puedes visitar la sección <a href="http://localhost/catando2/?clase=PresentacionController&metodo=index"">Productos</a>. </p>
-    <p> Si deseas conocer nuestras variedades, puedes visitar la sección <a href="">Variedades</a>. </p>
-    <p> Si deseas conocer nuestras publicaciones, puedes visitar la sección <a href="">Publicaciones</a>. </p>
-    <p> Si deseas ingresar a tu cuenta, puedes visitar la sección <a href="">Ingresar</a>. </p>
+<div class="content">
+    <h2> Bienvenido a Catando ando Coffee Shop </h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam quis voluptates maiores, eligendi laudantium voluptate in aspernatur veritatis, dolorum blanditiis cum ducimus necessitatibus, consequuntur error vel unde quaerat cumque!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem cum repellendus, doloremque asperiores officiis quos veritatis laborum quo libero ut, voluptas omnis. Optio deleniti nulla molestias at iure dolor vero.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio libero aliquam saepe aspernatur. Recusandae, ad odio! Tenetur rem, error deserunt eveniet esse cumque quaerat est, pariatur quasi, dignissimos quia commodi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ducimus similique provident tempore placeat modi quaerat temporibus vero autem nobis voluptates facilis sit nostrum soluta, beatae perspiciatis maiores! In, consectetur!
+    </p>
 </div>

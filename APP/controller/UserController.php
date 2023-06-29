@@ -5,19 +5,14 @@
     class UserController{
         //definimos el atributo modelo para almacenar la instancia del modelo User
         private $modelo;
-        //creamos el metodo constructor de la clase UserController para instanciar el modelo User
-        public function __construct(){
-            //instanciamos el modelo User
-            $this->modelo=new UserModel();
-        }
-        
+         
         //creamos el metodo index para cargar la vista por defecto del controlador
         public function index(){
             //definimos la vista que sera llamada por el controlador en el layout(plantilla)
-            $vista="APP/views/userIndexView.php";
-            //traemos todos los usuarios de la base de datos
+            $vista="APP/views/users/userIndexView.php";
             //inicializamos el modelo User para poder usar sus funciones
             $this->modelo=new UserModel();
+            //traemos todos los usuarios de la base de datos
             $datos=$this->modelo->getAll();
             //incluimos el layout(plantilla)
             include_once("APP/views/layout.php");
@@ -26,7 +21,7 @@
         //creamos el metodo para llamar el formulario de registro de usuario
         public function CallFormRegister(){
             //definimos la vista que sera llamada por el controlador en el layout(plantilla)
-            $vista="APP/views/userAddView.php";
+            $vista="APP/views/users/userAddView.php";
             //incluimos el layout(plantilla)
             include_once("APP/views/layout.php");
         }
@@ -55,7 +50,7 @@
                     //redireccionamos al controlador por defecto
                     header("Location:http://localhost/catando2/?clase=UserController&metodo=index");
                 }
+            }
         }
     }
-}
 ?>

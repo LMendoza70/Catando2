@@ -100,7 +100,7 @@
             $result = $connection->query($sql);
             //verificamos que la consulta se haya ejecutado correctamente
             if($result){
-                //obtenemos el id del usuario insertado
+                //obtenemos el id del usuario actualizado
                 $id = $connection->insert_id;
             }else{
                 //si no se ejecuto correctamente, retornamos false

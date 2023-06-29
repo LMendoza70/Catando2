@@ -31,9 +31,11 @@ class PresentacionModel{
         return $presentacion;
     }
 
-    public function insert($presentacion){
-        $sql = "INSERT INTO presentacion (descripcion, gramos)
-                VALUES ('". $presentacion['descripcion'] . "','" . $presentacion['gramos'] . "')"; 
+    public function insert($pre){
+        $sql = "INSERT INTO presentacion 
+        (descripcion, gramos) 
+        VALUES ('". $pre['desc'] . "','". $pre['gramos'] . "')";
+
         $connection = $this->connection->getConnection();
         $result = $connection->query($sql);
         if($result){

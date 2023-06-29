@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catando ando Coffee Shop</title>
-    <link rel="stylesheet" href="APP/views/styles.css">
+  <meta charset="UTF-8">
+  <title>Mi página de administración</title>
+  <link rel="stylesheet" href="app/views/styles.css">
 </head>
 <body>
-    <header>
-        <!-- Aquí puedes incluir el encabezado de la página, como el logo, el menú de navegación, etc. -->
-        <h1>Catando ando Coffee Shop</h1>
-        <nav>
-            <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Productos</a></li>
-                <li><a href="">Variedades</a></li>
-                <li><a href="">Publicaciones</a></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Ingresar</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <h1>Catando Ando Coffee Shop</h1>
+  </header>
 
-    <main>
-        <!-- Aquí puedes incluir los productos destacados, las categorías, ofertas, etc. -->
-        <?php include_once($vista); ?>
-    </main>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="http://localhost/catando2/">Inicio</a></li>
+        <li><a href="http://localhost/catando2/?clase=ProductsController&metodo=index">Productos</a></li>
+        <li><a href="http://localhost/catando2/?clase=PresentsController&metodo=index">Presentaciones</a></li>
+        <li><a href="http://localhost/catando2/?clase=VarietalsController&metodo=index">Variedades</a></li>
+        <li><a href="http://localhost/catando2/?clase=UserController&metodo=index">Usuarios</a></li>
+      </ul>
+    </nav>
 
-    <footer>
-        <!-- Aquí puedes incluir el pie de página con enlaces adicionales, información de contacto, etc. -->
-        <p>© 2020 Catando ando Coffee Shop</p>
-    </footer>
+    <section class="content">
+      <!-- El contenido de cada sección se cargará aquí -->
+      <?php include_once $vista ?>
+    </section>
+  </div>
+
+  <footer>
+    <p>Derechos reservados &copy; 2023</p>
+  </footer>
 </body>
 </html>
