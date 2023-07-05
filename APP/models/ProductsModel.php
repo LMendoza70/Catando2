@@ -23,7 +23,7 @@ class ProducsModel{
     public function insert($pro){
         $sql = "INSERT INTO cafe 
         (precio, variedad_id, presentacion_id) 
-        VALUES ('". $pro['variedad'] . "','". $pro['presentacion'] . "','". $pro['precio'] . "')";
+        VALUES ('". $pro['precio'] . "','". $pro['variedad'] . "','". $pro['presentacion'] . "')";
 
         $connection = $this->connection->getConnection();
         $result = $connection->query($sql);

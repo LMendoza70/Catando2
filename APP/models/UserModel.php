@@ -59,9 +59,9 @@
             //creamos la consulta
             $sql = "INSERT INTO user 
             (Usuario, Nombre, ApPaterno, ApMaterno, Password, Sexo, FchNacimiento) 
-            VALUES ('". $user['Usuario'] . "', '" . $user['Nombre'] . "', 
-            '" . $user['ApPaterno'] . "', '" . $user['ApMaterno'] . "', 
-            '" . $user['Password'] . "','" . $user['Sexo'] . "','" . $user['FchNacimiento'] . "')";
+            VALUES ('". $user['usuario'] . "', '" . $user['nombre'] . "', 
+            '" . $user['appaterno'] . "', '" . $user['apmaterno'] . "', 
+            '" . $user['password'] . "','" . $user['sexo'] . "','" . $user['fchnac'] . "')";
             
             //obtenemos la coneccion
             $connection = $this->bdConection->getConnection();
@@ -86,12 +86,12 @@
 
             //creamos la consulta para actualizar el usuario existente excepto el id
             $sql = "UPDATE User SET Usuario = '" 
-            . $user['Usuario'] . "', Nombre = '" . $user['Nombre'] 
-            . "', ApPaterno = '" . $user['ApPaterno'] 
-            . "', ApMaterno = '" . $user['ApMaterno'] 
-            . "', Password = '" . $user['Password'] 
-            . "', Sexo = '" . $user['Sexo'] 
-            . "', FchNacimiento = '" . $user['FchNacimiento'] 
+            . $user['usuario'] . "', Nombre = '" . $user['nombre'] 
+            . "', ApPaterno = '" . $user['appaterno'] 
+            . "', ApMaterno = '" . $user['apmaterno'] 
+            . "', Password = '" . $user['password'] 
+            . "', Sexo = '" . $user['sexo'] 
+            . "', FchNacimiento = '" . $user['fchnac'] 
             . "' WHERE IdUser = " . $user['IdUser'];
 
             //obtenemos la coneccion

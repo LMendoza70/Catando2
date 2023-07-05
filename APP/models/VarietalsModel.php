@@ -21,9 +21,9 @@ class VarietalsModel{
     public function insert($variedad){
         $sql = "INSERT INTO variedad 
         (nombre, descripcion, variedad, puntuacion, productor, finca, altura, proceso, notas) 
-        VALUES ('". $variedad['nombre'] . "','". $variedad['desc'] . "','". $variedad['variedad'] . "',
-        '". $variedad['puntos'] . "','". $variedad['productor'] . "','". $variedad['finca'] . "',
-        '". $variedad['altura'] . "','". $variedad['proceso'] . "','". $variedad['notas'] . "')";
+        VALUES ('". $variedad['Nombre'] . "','". $variedad['Descripcion'] . "','". $variedad['Variedad'] . "',
+        '". $variedad['Puntos'] . "','". $variedad['Productor'] . "','". $variedad['Finca'] . "',
+        '". $variedad['Altura'] . "','". $variedad['Proceso'] . "','". $variedad['Notas'] . "')";
 
         $connection = $this->connection->getConnection();
         $result = $connection->query($sql);

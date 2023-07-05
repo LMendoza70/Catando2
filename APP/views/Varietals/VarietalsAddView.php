@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="APP/views/stylesForm.css">
 <div class="containerf">
   <h2>Nueva Variedad</h2>
-  <form action="" method="post">
+  <form action="http://localhost/catando2/?clase=VarietalsController&metodo=Add" method="post">
     <p class="formGroup">
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" id="nombre" placeholder="Nombre" require>

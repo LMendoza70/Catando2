@@ -32,6 +32,7 @@
                        'Proceso'=>$_POST['proceso'],
                        'Notas'=>$_POST['notas']
                    );
+                    $this->model = new VarietalsModel();
                    $this->model->insert($datos);
                    header("Location:http://localhost/catando2/?clase=VarietalsController&metodo=index");        
             }

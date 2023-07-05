@@ -37,20 +37,59 @@
                 && isset($_POST['fchNac'])){
                     //almacenamos los datos enviados por el formulario en un arreglo
                     $datos=array(
-                        'Nombre'=>$_POST['nombre'],
-                        'ApPaterno'=>$_POST['apaterno'],
-                        'ApMaterno'=>$_POST['amaterno'],
-                        'Usuario'=>$_POST['usuario'],
-                        'Password'=>$_POST['password'],
-                        'Sexo'=>$_POST['sexo'],
-                        'FchNacimiento'=>$_POST['fchNac']
+                        'nombre'=>$_POST['nombre'],
+                        'appaterno'=>$_POST['apaterno'],
+                        'apmaterno'=>$_POST['amaterno'],
+                        'usuario'=>$_POST['usuario'],
+                        'password'=>$_POST['password'],
+                        'sexo'=>$_POST['sexo'],
+                        'fchnac'=>$_POST['fchNac']
                     );
                     //llamamos al metodo del modelo que agrega al usuario a la base de datos
+                    require_once("APP/models/UserModel.php");
+                    $this->modelo=new UserModel();
                     $this->modelo->insert($datos);
                     //redireccionamos al controlador por defecto
                     header("Location:http://localhost/catando2/?clase=UserController&metodo=index");
                 }
             }
         }
+
+        //creamos el metodo que llama al formulario de edicion de usuario
+        public function CallFormEdit(){
+            //verificamos si el metodo de envio de datos es GET
+            if($_SERVER['REQUEST_METHOD']=='GET'){
+                //verificamos si la variable de envio de datos esta definida
+                if(isset($_GET['id'])){
+                    //almacenamos el id del usuario a editar
+                    $id=$_GET['id'];
+                    //llamamos al metodo del modelo que trae los datos del usuario a editar
+                    $this->modelo=new UserModel();
+                    $datos=$this->modelo->getById($id);
+                    //definimos la vista que sera llamada por el controlador en el layout(plantilla)
+                    $vista="APP/views/users/userEditView.php";
+                    //incluimos el layout(plantilla)
+                    include_once("APP/views/layout.php");
+                }
+            }
+        }
+
+        //creamos el metodo que actualiza los datos del usuario en la base de datos
+        public function Update(){
+            //verificamos si el metodo de envio de datos es POST
+            if($_SERVER['REQUEST_METHOD']=='POST'){
+                //almacenamos los datos enviados por el formulario en un arreglo
+                $datos=array(
+                    'id'=>$_POST['id'],
+                    'nombre'=>$_POST['nombre'],
+                    'appaterno'=>$_POST['apaterno'],
+                    'apmaterno'=>$_POST['amaterno'],
+                    'usuario'=>$_POST['usuario'],
+                    'password'=>$_POST['password'],
+                    'sexo'=>$_POST['sexo'],
+                    'fchnac'=>$_POST['fchNac']
+                );
+            }
     }
+}
 ?>

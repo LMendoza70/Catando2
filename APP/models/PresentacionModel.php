@@ -34,7 +34,7 @@ class PresentacionModel{
     public function insert($pre){
         $sql = "INSERT INTO presentacion 
         (descripcion, gramos) 
-        VALUES ('". $pre['desc'] . "','". $pre['gramos'] . "')";
+        VALUES ('". $pre['descripcion'] . "','". $pre['gramos'] . "')";
 
         $connection = $this->connection->getConnection();
         $result = $connection->query($sql);
