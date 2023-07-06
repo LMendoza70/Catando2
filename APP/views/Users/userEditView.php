@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="APP/views/stylesForm.css">
 <div class="containerf">
   <h2>formulario</h2>
-  <form action="http://localhost/catando2/?clase=UserController&metodo=Update" method="post">
+  <form 
+  action="http://localhost/catando2/?clase=UserController&metodo=Update" 
+  method="post" 
+  enctype="multipart/form-data" >
     <p class="formGroup">
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?= $datos['Nombre'] ?>" require>
@@ -33,6 +36,11 @@
       <label for="fchNac">Fecha de nacimiento</label>
       <input type="date" name="fchNac" id="fchNac" value="<?= $datos['FchNacimiento'] ?>" require>
     </p>
+    <p>
+      <label for="avatar">Avatar:</label>
+      <input type="file" name="avatar" id="avatar" accept="image/*" value="<?= $datos['Avatar'] ?>"  />
+    </p>
+    <input type="hidden" name="id" value="<?= $datos['IdUser'] ?>">
     <p class="formGroup">
       <input type="submit" value="Guardar">
     </p>

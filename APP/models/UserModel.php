@@ -58,10 +58,10 @@
         public function insert($user){
             //creamos la consulta
             $sql = "INSERT INTO user 
-            (Usuario, Nombre, ApPaterno, ApMaterno, Password, Sexo, FchNacimiento) 
+            (Usuario, Nombre, ApPaterno, ApMaterno, Password, Sexo, FchNacimiento, Avatar) 
             VALUES ('". $user['usuario'] . "', '" . $user['nombre'] . "', 
             '" . $user['appaterno'] . "', '" . $user['apmaterno'] . "', 
-            '" . $user['password'] . "','" . $user['sexo'] . "','" . $user['fchnac'] . "')";
+            '" . $user['password'] . "','" . $user['sexo'] . "','" . $user['fchnac'] . "','" . $user['avatar'] . "')";
             
             //obtenemos la coneccion
             $connection = $this->bdConection->getConnection();

@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="APP/views/stylesForm.css">
 <div class="containerf">
   <h2>formulario</h2>
-  <form action="http://localhost/catando2/?clase=UserController&metodo=Add" method="post" enctype="multipart/form-data">
+  <form 
+  action="http://localhost/catando2/?clase=UserController&metodo=Add" 
+  method="post" 
+  enctype="multipart/form-data">
     <p class="formGroup">
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" id="nombre" placeholder="Nombre" require>
