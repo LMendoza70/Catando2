@@ -123,7 +123,9 @@
                     'usuario'=>$_POST['usuario'],
                     'password'=>$_POST['password'],
                     'sexo'=>$_POST['sexo'],
-                    'fchnac'=>$_POST['fchNac']
+                    'fchnac'=>$_POST['fchNac'],
+                    'avatar'=>$_POST['avatar']
+
                 );
                 // Verificamos si se ha cargado un archivo y no hubo errores en la carga
                 if(isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
@@ -162,9 +164,10 @@
                     //eliminamos el archivo anterior
                     $this->modelo=new UserModel();
                     $datosAnt=$this->modelo->getById($datos['IdUser']);
-                    echo 'APP/src/img/avatars/'.$datosAnt['Avatar'];
-                    unlink('APP/src/img/avatars/'.$datosAnt['Avatar'], $context = null);
-                    //actualizamos el nombre del archivo en el arreglo de datos
+                   // Eliminamos el archivo anterior si existe
+                    if (!empty($datosAnt['Avatar'])) {
+                        unlink('APP/src/img/avatars/' . $datosAnt['Avatar']);
+                    }
                     $datos['avatar'] = $nombreArchivo;
                 }
                 //llamamos al metodo del modelo que actualiza los datos del usuario en la base de datos

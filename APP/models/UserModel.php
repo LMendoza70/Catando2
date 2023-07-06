@@ -92,6 +92,7 @@
             . "', Password = '" . $user['password'] 
             . "', Sexo = '" . $user['sexo'] 
             . "', FchNacimiento = '" . $user['fchnac'] 
+            . "', Avatar = '" . $user['avatar']
             . "' WHERE IdUser = " . $user['IdUser'];
 
             //obtenemos la coneccion
