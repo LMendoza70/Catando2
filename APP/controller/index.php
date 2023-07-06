@@ -13,5 +13,19 @@ class index
 		//incluimos el layout(plantilla)
         include_once("APP/views/layout.php");
 	}	
+
+	public function CallFormLogin()
+	{		
+		//definimos la vista que sera llamada por el controlador en el layout(plantilla)
+		$vista="APP/views/Users/userLoginView.php";
+		//incluimos el layout(plantilla)
+		include_once("APP/views/layout.php");
+	}
+	public function indexlog(){
+		//definimos la vista que sera llamada por el controlador en el layout(plantilla)
+		$vista="APP/views/index.php";
+		//incluimos el layout(plantilla)
+		include_once("APP/views/layoutLog.php");
+	}
 }
 ?>

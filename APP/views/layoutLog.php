@@ -17,7 +17,10 @@
     <nav>
       <ul>
         <li><a href="http://localhost/catando2/">Inicio</a></li>
-        <li><a href="http://localhost/catando2/?clase=index&metodo=CallFormLogin">Login</a></li>
+        <li><a href="http://localhost/catando2/?clase=ProductsController&metodo=index">Productos</a></li>
+        <li><a href="http://localhost/catando2/?clase=PresentsController&metodo=index">Presentaciones</a></li>
+        <li><a href="http://localhost/catando2/?clase=VarietalsController&metodo=index">Variedades</a></li>
+        <li><a href="http://localhost/catando2/?clase=UserController&metodo=index">Usuarios</a></li>
       </ul>
     </nav>
 

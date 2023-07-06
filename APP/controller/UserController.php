@@ -15,7 +15,7 @@
             //traemos todos los usuarios de la base de datos
             $datos=$this->modelo->getAll();
             //incluimos el layout(plantilla)
-            include_once("APP/views/layout.php");
+            include_once("APP/views/layoutLog.php");
         }
 
         //creamos el metodo para llamar el formulario de registro de usuario
@@ -23,7 +23,7 @@
             //definimos la vista que sera llamada por el controlador en el layout(plantilla)
             $vista="APP/views/users/userAddView.php";
             //incluimos el layout(plantilla)
-            include_once("APP/views/layout.php");
+            include_once("APP/views/layoutLog.php");
         }
 
         //creamos el metodo que agrega al usuario a la base de datos
@@ -105,7 +105,7 @@
                     //definimos la vista que sera llamada por el controlador en el layout(plantilla)
                     $vista="APP/views/users/userEditView.php";
                     //incluimos el layout(plantilla)
-                    include_once("APP/views/layout.php");
+                    include_once("APP/views/layoutLog.php");
                 }
             }
         }
@@ -175,6 +175,32 @@
                 $this->modelo->update($datos);
                 //redireccionamos al controlador por defecto
                 header("Location:http://localhost/catando2/?clase=UserController&metodo=index");
+            }
+        }
+
+            //creamos el metodo de login
+            public function Login(){
+                //verificamos si el metodo de envio de datos es POST
+                if($_SERVER['REQUEST_METHOD']=='POST'){
+                //creamos la instancia del modelo
+                $this->modelo=new UserModel();
+                //ejecutamos el metodo getcredentials del modelo y le pasamos los datos del formulario
+                $datos=$this->modelo->getCredentials($_POST['usuario'],$_POST['password']);
+                //verificamos si el usuario existe
+                if($datos){
+                    //iniciamos la sesion
+                    session_start();
+                    //creamos las variables de sesion
+                    $_SESSION['User']=$datos['Usuario'];
+                    $_SESSION['Nombre']=$datos['IdUser'].' '.$datos['Appaterno'].' '.$datos['Apmaterno'];
+                    $_SESSION['Avatar']=$datos['Avatar'];
+                    //redireccionamos al controlador logueado por defecto
+                    header("Location:http://localhost/catando2/?clase=index&metodo=indexlog");
+                }else{
+                    //redireccionamos al controlador por defecto
+                    header("Location:http://localhost/catando2/");
+                }
+
             }
     }
 }

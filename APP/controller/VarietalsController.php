@@ -8,12 +8,12 @@
             $this->model = new VarietalsModel();
             $vista="APP/views/varietals/VarietalsIndexView.php";
             $datos = $this->model->getAll();
-            include_once("APP/views/layout.php");   
+            include_once("APP/views/layoutLog.php");   
         }
 
         public function CallFormRegister(){
             $vista="APP/views/varietals/VarietalsAddView.php";
-            include_once("APP/views/layout.php");
+            include_once("APP/views/layoutLog.php");
         }
 
         public function Add(){

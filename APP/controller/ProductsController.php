@@ -10,7 +10,7 @@
             $this->model = new ProducsModel();
             $vista="APP/views/products/ProducsIndexView.php";
             $datos = $this->model->getAll();
-            include_once("APP/views/layout.php");   
+            include_once("APP/views/layoutLog.php");   
         }
 
         public function CallFormRegister(){
@@ -21,7 +21,7 @@
             $presentationsModel = new PresentacionModel();
             $presentations = $presentationsModel->getAll();
             $vista="APP/views/products/ProductsAddView.php";
-            include_once("APP/views/layout.php");
+            include_once("APP/views/layoutLog.php");
         }
 
         public function Add(){

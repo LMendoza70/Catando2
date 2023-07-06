@@ -136,7 +136,7 @@
         }
 
         //creamos la funcion para obtener un usuario por su usuario y password
-        public function getByUserAndPassword($user, $password){
+        public function getCredentials($user, $password){
             //creamos la consulta para obtener el usuario
             $sql = "SELECT * FROM User WHERE Usuario = '$user' AND Password = '$password'";
             //obtenemos la coneccion

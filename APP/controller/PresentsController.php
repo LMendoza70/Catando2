@@ -8,12 +8,12 @@
             $this->model = new PresentacionModel();
             $vista="APP/views/presents/PresentsIndexView.php";
             $datos = $this->model->getAll();
-            include_once("APP/views/layout.php");   
+            include_once("APP/views/layoutLog.php");   
         }
 
         public function CallFormRegister(){
             $vista="APP/views/presents/PresentsAddView.php";
-            include_once("APP/views/layout.php");
+            include_once("APP/views/layoutLog.php");
         }
 
         public function Add(){
