@@ -5,15 +5,27 @@
         private $model;
 
         public function index(){
-            $this->model = new VarietalsModel();
-            $vista="APP/views/varietals/VarietalsIndexView.php";
-            $datos = $this->model->getAll();
-            include_once("APP/views/layoutLog.php");   
+            session_start();
+            if(isset($_SESSION['logedin']) && $_SESSION['logedin']==true){
+                $this->model = new VarietalsModel();
+                $vista="APP/views/varietals/VarietalsIndexView.php";
+                $datos = $this->model->getAll();
+                include_once("APP/views/layoutLog.php");   
+            }else{
+                $vista="APP/views/index.php";
+                include_once("APP/views/layout.php");
+            }
         }
 
         public function CallFormRegister(){
-            $vista="APP/views/varietals/VarietalsAddView.php";
-            include_once("APP/views/layoutLog.php");
+            session_start();
+            if(isset($_SESSION['logedin']) && $_SESSION['logedin']==true){
+                $vista="APP/views/varietals/VarietalsAddView.php";
+                include_once("APP/views/layoutLog.php");
+            }else{
+                $vista="APP/views/index.php";
+                include_once("APP/views/layout.php");
+            }
         }
 
         public function Add(){
@@ -39,4 +51,3 @@
         }
     }
 }
-?>

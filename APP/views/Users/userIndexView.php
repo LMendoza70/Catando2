@@ -26,13 +26,22 @@
                 echo "<td>" . $dato['ApPaterno'] . "</td>";
                 echo "<td>" . $dato['ApMaterno'] . "</td>";
                 echo "<td>" . $dato['Usuario'] . "</td>";
-                echo "<td>";
-                echo "<a href='http://localhost/catando2/?clase=UserController&metodo=CallFormEdit&id=" . $dato['IdUser'] . "'>Editar</a><br>";
-                echo "<a href='http://localhost/catando2/?clase=UserController&metodo=Delete&id=" . $dato['IdUser'] . "'>Eliminar</a>";
-                echo "</td>";
+                echo "<td> <button onclick='editar(" . $dato['IdUser'] . ")'>Editar</button><br>
+                <button onclick='eliminar(" . $dato['IdUser'] . ")'>Eliminar</button> </td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
 </div>
+<script>
+    function editar(id) {
+        window.location.href = "http://localhost/catando2/?clase=UserController&metodo=CallFormEdit&id=" + id;
+    }
+
+    function eliminar(id) {
+        if (confirm("¿Estas seguro de eliminar este usuario?")) {
+            window.location.href = "http://localhost/catando2/?clase=UserController&metodo=Delete&id=" + id;
+        }
+    }
+</script>

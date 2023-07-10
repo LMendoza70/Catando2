@@ -1,10 +1,7 @@
 <link rel="stylesheet" href="APP/views/stylesForm.css">
 <div class="containerf">
   <h2>formulario</h2>
-  <form 
-  action="http://localhost/catando2/?clase=UserController&metodo=Update" 
-  method="post" 
-  enctype="multipart/form-data" >
+  <form action="http://localhost/catando2/?clase=UserController&metodo=Update" method="post" enctype="multipart/form-data">
     <p class="formGroup">
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?= $datos['Nombre'] ?>" require>
@@ -26,7 +23,7 @@
       <input type="password" name="password" id="password" placeholder="Password" value="<?= $datos['Password'] ?>" require>
     </p>
     <p class="formGroup">
-      <label for="sexo">Sexo</label>  
+      <label for="sexo">Sexo</label>
       <select name="sexo" id="sexo">
         <option value="1">Hombre</option>
         <option value="2">Mujer</option>
@@ -38,9 +35,10 @@
     </p>
     <p>
       <label for="avatar">Avatar:</label>
-      <input type="file" name="avatar" id="avatar" accept="image/*" value="<?= $datos['Avatar'] ?>"  />
+      <input type="file" name="avatar" id="avatar" accept="image/*" />
     </p>
     <input type="hidden" name="id" value="<?= $datos['IdUser'] ?>">
+    <input type="hidden" name="ava" value="<?= $datos['Avatar'] ?>">
     <p class="formGroup">
       <input type="submit" value="Guardar">
     </p>

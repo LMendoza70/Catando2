@@ -7,21 +7,31 @@
         private $model;
 
         public function index(){
-            $this->model = new ProducsModel();
-            $vista="APP/views/products/ProducsIndexView.php";
-            $datos = $this->model->getAll();
-            include_once("APP/views/layoutLog.php");   
+            session_start();
+            if(isset($_SESSION['logedin']) && $_SESSION['logedin']==true){
+                $this->model = new ProducsModel();
+                $vista="APP/views/products/ProducsIndexView.php";
+                $datos = $this->model->getAll();
+                include_once("APP/views/layoutLog.php");   
+            }else{
+                $vista="APP/views/index.php";
+                include_once("APP/views/layout.php");
+            }
         }
 
         public function CallFormRegister(){
-            //este metodo tendra que llevar los datos de las entidades presentacion y variedad para 
-            //que el usuario pueda seleccionarlos desde un select
-            $varietalsModel = new VarietalsModel();
-            $varietals = $varietalsModel->getAll();
-            $presentationsModel = new PresentacionModel();
-            $presentations = $presentationsModel->getAll();
-            $vista="APP/views/products/ProductsAddView.php";
-            include_once("APP/views/layoutLog.php");
+            session_start();
+            if(isset($_SESSION['logedin']) && $_SESSION['logedin']==true){
+                $varietalsModel = new VarietalsModel();
+                $varietals = $varietalsModel->getAll();
+                $presentationsModel = new PresentacionModel();
+                $presentations = $presentationsModel->getAll();
+                $vista="APP/views/products/ProductsAddView.php";
+                include_once("APP/views/layoutLog.php");
+            }else{
+                $vista="APP/views/index.php";
+                include_once("APP/views/layout.php");
+            }
         }
 
         public function Add(){
@@ -39,4 +49,3 @@
            }
         }
     }
-?>

@@ -22,7 +22,8 @@
 
         //creamos la funcion para cerrar la coneccion
         public function closeConnection(){
-            $this->connection->close();
+            if($this->connection && $this->connection->ping()){
+                $this->connection->close();
+            }
         }
     }
-?>

@@ -1,10 +1,15 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Mi página de administración</title>
   <link rel="stylesheet" href="app/views/styles.css">
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -34,4 +39,5 @@
     <p>Derechos reservados &copy; 2023</p>
   </footer>
 </body>
+
 </html>
